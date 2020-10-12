@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operations>
+	<operation>
+		<fromAccount>40817810570000123456</fromAccount>
+		<toAccount>40817810570000654321</toAccount>
+		<amount>100.00</amount>
+		<currency>RUB</currency>
+		<date>05.10.2020</date>
+		<id>3</id>
+	</operation>
+	<operation>
+		<fromAccount>40817810570000123456</fromAccount>
+		<toAccount>40817810570000000001</toAccount>
+		<amount>50.00</amount>
+		<currency>RUB</currency>
+		<date>06.10.2020</date>
+		<id>4</id>
+	</operation>
+	<operation>
+		<fromAccount>40817810570000654321</fromAccount>
+		<toAccount>40817810570000123456</toAccount>
+		<amount>250.00</amount>
+		<currency>USD</currency>
+		<date>06.10.2020</date>
+		<id>5</id>
+	</operation>
+</operations>
