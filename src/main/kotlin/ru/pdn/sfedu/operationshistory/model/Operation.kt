@@ -3,9 +3,7 @@ package ru.pdn.sfedu.operationshistory.model
 import ru.pdn.sfedu.operationshistory.DateAdapter
 import java.math.BigDecimal
 import java.util.*
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.Table
+import javax.persistence.*
 import javax.xml.bind.annotation.XmlAccessType
 import javax.xml.bind.annotation.XmlAccessorType
 import javax.xml.bind.annotation.XmlElement
@@ -33,7 +31,10 @@ class Operation (
         val date: Date? = null,
         @field:XmlElement(name = "id")
         @Column(name = "doc_id")
-        val docId: Long? = null
+        val docId: Long? = null,
+        @ManyToOne
+        @JoinColumn(name = "clientId")
+        val client: Client? = null
 ): Domain() {
         override fun toString(): String {
                 return "Operation(amount=$amount, date=$date)"

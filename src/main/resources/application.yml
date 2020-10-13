@@ -12,3 +12,19 @@ spring:
       ddl-auto: create-drop
   datasource:
     url: jdbc:h2:mem:operations
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    dynamic: true
+    cache:
+      channel:
+        size: 10
+    template:
+      reply-timeout: 30s
+    listener:
+      simple:
+        max-concurrency: 300
+
+
