@@ -21,7 +21,7 @@ class AmqpConfig {
     }
 
     @Bean
-    fun opetarionQueue() = Queue(OPERATION)
+    fun operationQueue() = Queue(OPERATION)
 
     @Bean
     fun operationExchange() = DirectExchange("operation.direct")

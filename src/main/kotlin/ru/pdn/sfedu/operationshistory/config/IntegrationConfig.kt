@@ -13,7 +13,6 @@ import org.springframework.integration.file.FileReadingMessageSource
 import org.springframework.oxm.jaxb.Jaxb2Marshaller
 import org.springframework.xml.transform.StringSource
 import ru.pdn.sfedu.operationshistory.model.Operations
-import ru.pdn.sfedu.operationshistory.model.OperationsRepo
 import ru.pdn.sfedu.operationshistory.toDtoOperation
 import java.io.File
 
@@ -21,7 +20,6 @@ import java.io.File
 @EnableIntegration
 class IntegrationConfig(
         private val operationsMarshaller: Jaxb2Marshaller,
-        private val operationsRepo: OperationsRepo,
         private  val rabbitTemplate: RabbitTemplate,
         @Value("\${file.in}")
         private val fileInPath: String
@@ -44,9 +42,5 @@ class IntegrationConfig(
         operations.operations?.forEach {
             rabbitTemplate.convertAndSend(OPERATION, it.toDtoOperation())
         }
-
-//        operationsRepo.saveAll(operations.operations!!)
-//        val operationsFromDB = operationsRepo
-//                .findByFromAccountAndToAccount("${operations.operations.get(0).fromAccount}", "${operations.operations.get(0).toAccount}")
     }
 }
